@@ -1,6 +1,5 @@
 import random
 
-
 class Statistic:
     def __init__(self, legacy_points: int):
         self.value = self._generate_starting_value(legacy_points)
@@ -30,8 +29,25 @@ class Statistic:
 
 class Strength(Statistic):
 
-    def __init__(self, value):
-        super().__init__(value)
+    def __init__(self, legacy_points: int):
+        super().__init__(legacy_points)
         self.description = "Strength is a measure of physical power."
 
 # and so on for the other statistics
+
+# Example usage:
+if __name__ == "__main__":
+    # Create a Strength statistic for a character
+    strength_stat = Strength(legacy_points=150)  # Example legacy points
+
+    # Print the initial value and description of Strength
+    print("Initial Strength Value:", strength_stat)
+    print("Strength Description:", strength_stat.description)
+
+    # Increase the Strength value by 10
+    strength_stat.increase(10)
+    print("Increased Strength Value:", strength_stat)
+
+    # Decrease the Strength value by 5
+    strength_stat.decrease(5)
+    print("Decreased Strength Value:", strength_stat)

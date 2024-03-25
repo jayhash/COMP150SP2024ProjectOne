@@ -4,9 +4,7 @@ from project_code.src.Character import Character
 from project_code.src.Event import Event
 from project_code.src.Location import Location
 
-
 class Game:
-
     def __init__(self):
         self.characters: List[Character] = []
         self.locations: List[Location] = []
@@ -14,8 +12,8 @@ class Game:
         self.party: List[Character] = []
         self.current_location = None
         self.current_event = None
-        self._initialize_game()
         self.continue_playing = True
+        self._initialize_game()
 
     def add_character(self, character: Character):
         """Add a character to the game."""
@@ -30,8 +28,13 @@ class Game:
         self.events.append(event)
 
     def _initialize_game(self):
-        """Initialize the game with characters, locations, and events based on the user's properties."""
-        pass
+        """Initialize the game with characters, locations, and events."""
+        # Example initialization
+        self.add_character(Character("Warrior"))
+        self.add_character(Character("Mage"))
+        self.add_location(Location("Forest", "A dense forest with towering trees."))
+        self.add_location(Location("Cave", "A dark cave with winding tunnels."))
+        self.add_event(Event("Monster Encounter", "You encounter a group of goblins!"))
 
     def start_game(self):
         return self._main_game_loop()
@@ -39,19 +42,17 @@ class Game:
     def _main_game_loop(self):
         """The main game loop."""
         while self.continue_playing:
-            pass
-            # ask for user input
-            # parse user input
-            # update game state
-            # check if party is all dead
-            # if part is dead, award legacy points and end instance of game
-            # if party is not dead, continue game
-        if self.continue_playing is False:
-            return True
-        elif self.continue_playing == "Save and quit":
-            return "Save and quit"
-        else:
-            return False
+            self.current_location = self.locations[0]  # Example: Set the current location to the first one
+            self.current_location.describe()
+            self.current_location.explore()  # Example: Explore the current location
+            # Additional game logic can go here
+            self.continue_playing = False  # For the sake of the example, we'll end the game loop
+        return "Game Over"
+
+# Example usage
+game = Game()
+result = game.start_game()
+print(result)  # This should print "Game Over"
 
 
 
