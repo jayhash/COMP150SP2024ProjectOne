@@ -4,11 +4,11 @@ import random
 
 class Dungeon:
     def __init__(self):
-        self.monsters = ["Goblin", "Skeleton", "Orc", "Giant Spider"]
-        self.traps = ["Pitfall", "Poison Dart", "Swinging Blade", "Pressure Plate"]
-        self.treasures = ["Gold Coins", "Magic Sword", "Potion of Healing", "Gemstone"]
-        self.npcs = ["Friendly Wizard", "Mysterious Bard", "Greedy Merchant", "Captive Prisoner"]
-        self.hazards = ["Collapsing Ceiling", "Toxic Gas", "Flooded Chamber", "Mystical Barrier"]
+        self.monsters = ["Paint Glob", "Inker", "Sponge Grunge", "Painters Mock"]
+        self.traps = ["Charcoal Dust", "Art Bag Claw", "Oil", "Art Block"]
+        self.treasures = ["Eraser", "Magic Pencil", "Watercolor Potion", "Gemstone"]
+        self.npcs = ["Orange Mantis", "Pink Vender", "Blue Soul", "Green Gardener"]
+        self.hazards = ["Folding Paper", "Crumbling Clay", "Melting Paint", "Paint in your eye"]
 
     def event_encounter_monsters(self):
         monster = random.choice(self.monsters)

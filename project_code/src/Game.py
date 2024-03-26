@@ -32,9 +32,9 @@ class Game:
         # Example initialization
         self.add_character(Character("Warrior"))
         self.add_character(Character("Mage"))
-        self.add_location(Location("Forest", "A dense forest with towering trees."))
-        self.add_location(Location("Cave", "A dark cave with winding tunnels."))
-        self.add_event(Event("Monster Encounter", "You encounter a group of goblins!"))
+        self.add_location(Location("Forest", "A dense brush forest with towering dry paint brushes."))
+        self.add_location(Location("Cave", "A dark clay cave with jagged clay spikes."))
+        self.add_event(Event("Monster Encounter", "You encounter a group of paint globs!"))
 
     def start_game(self):
         return self._main_game_loop()
